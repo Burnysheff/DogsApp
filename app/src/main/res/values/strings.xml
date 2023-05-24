@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">DogsApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Person</string>
+    <string name="entry">Войти в аккаунт</string>
+    <string name="login">Страница логина</string>
+    <string name="reg">Зарегистрироваться</string>
+    <string name="finder">Найти курс</string>
+
+    <string name="name">Введите ваше имя</string>
+    <string name="email">Введите вашу электронную почту</string>
+    <string name="check">Принять что-то там</string>
+    <string name="log">Обратно в логин</string>
+</resources>
