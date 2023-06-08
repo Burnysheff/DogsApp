@@ -9,9 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.bumptech.glide.Glide
 import com.example.dogsapp.LoginActivity
 import com.example.dogsapp.MainActivity
 import com.example.dogsapp.R
@@ -30,6 +32,8 @@ class LoginFragment: Fragment() {
     private lateinit var password: EditText
     private lateinit var reg: TextView
 
+    private lateinit var image: ImageView
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -41,6 +45,7 @@ class LoginFragment: Fragment() {
         email = binding.email
         password = binding.password
         reg = binding.reg
+        image = binding.imageView
 
         val linkTextView = reg
         linkTextView.movementMethod = LinkMovementMethod.getInstance()

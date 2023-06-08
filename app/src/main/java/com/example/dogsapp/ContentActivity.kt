@@ -16,6 +16,9 @@ import com.example.dogsapp.ui.text.TextFragment
 class ContentActivity: AppCompatActivity() {
     private lateinit var binding: ContentBinding
     private lateinit var webView: WebView
+    private lateinit var title: TextView
+
+    private lateinit var content: String
 
     private lateinit var text: TextView
     private lateinit var video: TextView
@@ -41,7 +44,14 @@ class ContentActivity: AppCompatActivity() {
 
         text = binding.text
         video = binding.video
+        title = binding.textView12
 
+        val extras = intent.extras
+        title.text = extras?.getString("title")
+
+        val bundle = Bundle()
+        bundle.putString("text", extras?.getString("text"))
+        fragment.arguments = bundle
         supportFragmentManager.beginTransaction().add(R.id.content, fragment).commit()
         text.textSize = 18F
 

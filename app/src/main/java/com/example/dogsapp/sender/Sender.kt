@@ -1,9 +1,7 @@
 package com.example.dogsapp.sender
 
 import android.text.Editable
-import android.util.Log
 import com.squareup.okhttp.*
-import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
 import java.net.URL
 import java.net.URLEncoder
@@ -45,9 +43,20 @@ class Sender {
                 .build()
 
             val response = client.newCall(request).execute()
-            Log.d("MainActivity", response.code().toString())
 
             return response.isSuccessful
+        }
+
+        fun getAll(): Response {
+            val client = OkHttpClient()
+            client.protocols = listOf(Protocol.HTTP_1_1);
+
+            val request = Request.Builder()
+                .url("$base/Guides")
+                .get()
+                .build()
+
+            return client.newCall(request).execute()
         }
     }
 }
